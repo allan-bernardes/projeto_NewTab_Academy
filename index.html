@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Controle Financeiro</title>
+</head>
+
+<body>
+  <cabecalho>
+    <div class="container_cabecalho">
+      <div class="container_cabecalho_imagem">
+        <img class="cabecalho_imagem" src="img/logo.svg" alt="Logo">
+      </div>
+
+      <div class="container_cabecalho_titulo">
+        <span class="cabecalho_titulo">Controle Financeiro</span>
+      </div>
+
+      <!-- Menu Lateral Hamburguer -->
+      <div class="container_cabecalho_menu">
+        <input type="checkbox" id="chec">
+        <label class="nav_menu_rotulo" for="chec">
+          <img src="img/mobile-menu.svg" alt="Menu">
+        </label>
+
+        <nav class="container_nav_menu">
+          <ul>
+            <li>
+              <input type="checkbox" id="chec">
+              <label class="nav_menu_rotulo" for="chec">
+              <img class="nav_menu_imagem" src="img/sidebar-close-btn.svg" alt="Fechar Janela">
+            </li>
+            <li><a class="link_cadastro" href="#">Cadastro de transações</a></li>
+            <li><a class="link_limpar" id="link_limpar" href="#">Limpar dados</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    </header>
+
+    <!-- Section Transações com Resultado -->
+    <div class="container_total">
+      <form id="formulario_1" action="./index.html" onsubmit="validacao(event); return false">
+        <section>
+          <div class="container_secao">
+
+            <div class="container_secao_texto">
+              <div>Tipo de transação</div>
+              <div class="container_secao_entrada">
+                <select name="selecao" id="selecao">
+                  <option value="seleciona" selected disabled>Selecione uma transação</option>
+                  <option value="compra">Compra</option>
+                  <option value="venda">Venda</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="container_secao_texto">
+              <div>Nome da mercadoria</div>
+              <div class="container_secao_entrada">
+                <input type="text" name="mercadoria" id="mercadoria" placeholder="entrada">
+              </div>
+            </div>
+
+            <div class="container_secao_texto">
+              <div>Valor</div>
+              <div class="container_secao_entrada">
+                <input type="text" name="valor" id="valor" placeholder="R$ 0,00" maxlength="22" onKeyPress="return(MascaraMoeda(this,'.',',',event))">
+              </div>
+            </div>
+
+            <div class="container_secao_botao">
+              <input class="button" type="submit" value="Adicionar transação">
+            </div>
+          </div>
+        </section>
+      </form>
+
+      <!-- Criando uma tabela com containers (div) separando por cabecalho, corpo e rodape -->
+      <form id="formulario_2">
+        <section id="tabela">
+          <div class="container_secao_2_titulo">
+            <p>Extrato de transações</p>
+          </div>
+
+          <table>
+            <thead class="container_secao_2">
+              <tr class="container_tabela">
+                <td class="tabela_titulo">Mercadoria</div>
+                <td class="tabela_titulo">Valor</div>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr class="container_tabela_3">
+                <td class="tabela_corpo_2">Nenhuma transação cadastrada</td>
+              </tr>
+            </tbody>
+
+            <tfoot>
+            </tfoot>
+          </table>
+        </section>
+      </form>
+    </div>
+
+    <!-- Fim da página (rodape) -->
+
+    <footer>
+      <div class="linha_horizontal_rodape"></div>
+    </footer>
+
+    <script src="javascript/index.js"></script>
+    <script>extratoHTML()</script>
+</body>
+
+</html>
